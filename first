@@ -1,0 +1,297 @@
+// use salesman
+db.createCollection("client_master");
+
+db.client_master.insertMany([
+  {
+    Clientno: "C00001",
+    Name: "Ivan",
+    City: "Bombay", 
+    Pincode: 400054,
+    State: "Maharashtra",
+    baldue: 15000,
+  },
+
+  {
+    Clientno: "C00002",
+    Name: "Gopi",
+    City: "Madras",
+    Pincode: 780001,
+    State: "Tamilnadu",
+    baldue: 0,
+  },
+
+  {
+    Clientno: "C00003",
+    Name: "Pramada",
+    City: "Bombay", 
+    Pincode: 400057,
+    State: "Maharashtra",
+    baldue: 5000,
+  },
+
+  {
+    Clientno: "C00004",
+    Name: "Basu",
+    City: "Bombay",
+    Pincode: 400056,
+    State: "Maharashtra",
+    baldue: 0,
+  },
+
+  {
+    Clientno: "C00005",
+    Name: "Ravi",
+    City: "Delhi",
+    Pincode: 100001,
+    State: "Tamilnadu",
+    baldue: 2000,
+  },
+
+  {
+    Clientno: "C00006",
+    Name: "Rukmini",
+    City: "Bombay",
+    Pincode: 400050,
+    State: "Maharashtra",
+    baldue: 0,
+  },
+]);
+
+
+
+// ============================================
+
+db.createCollection("salesman_master");
+
+db.salesman_master.insertMany([
+  {
+    salesman_no: "S00001",
+    salesmanname: "Kiran",
+    address: "A/14 worli",
+    city: "Bombay",
+    pincode: 400002,
+    state: "Mah",
+    salamt: 3000,
+    tgttogrt: 100,
+    ytdsale: 50,
+    remark: "Good",
+  },
+  {
+    salesman_no: "S00002",
+    salesmanname: "Manish",
+    address: "64-nariman",
+    city: "Bombay",
+    pincode: 400001,
+    state: "Mah",
+    salamt: 3000,
+    tgttogrt: 200,
+    ytdsale: 100,
+    remark: "Good",
+  },
+  {
+    salesman_no: "S00003",
+    salesmanname: "Ravi",
+    address: "P-7 Bandra",
+    city: "Bombay",
+    pincode: 400032,
+    state: "Mah",
+    salamt: 3000,
+    tgttogrt: 200,
+    ytdsale: 100,
+    remark: "Good",
+  },
+  {
+    salesman_no: "S00004",
+    salesmanname: "Ashish",
+    address: "A/5 Juhu",
+    city: "Bombay",
+    pincode: 400044,
+    state: "Mah",
+    salamt: 3500,
+    tgttogrt: 200,
+    ytdsale: 150,
+    remark: "Good",
+  },
+]);
+
+// ===================================================
+
+db.createCollection("product_master");
+
+db.product_master.insertMany([
+  {
+    productno: "P00001",
+    description: "1.44floppies",
+    prfitpercent: 5,
+    unitmeasured: "piece",
+    qtyonhand: 100,
+    recorderlvl: 20,
+    sellprice: 525,
+    costprice: 500,
+  },
+  {
+    productno: "P03453",
+    description: "Monitors",
+    prfitpercent: 6,
+    unitmeasured: "piece",
+    qtyonhand: 10,
+    recorderlvl: 5,
+    sellprice: 1050,
+    costprice: 500,
+  },
+  {
+    productno: "P06734",
+    description: "Mouse",
+    prfitpercent: 5,
+    unitmeasured: "piece",
+    qtyonhand: 20,
+    recorderlvl: 5,
+    sellprice: 1050,
+    costprice: 500,
+  },
+  {
+    productno: "P07865",
+    description: "1.22 floppies",
+    prfitpercent: 5,
+    unitmeasured: "piece",
+    qtyonhand: 100,
+    recorderlvl: 20,
+    sellprice: 525,
+    costprice: 500,
+  },
+  {
+    productno: "P07868",
+    description: "Keyboards",
+    prfitpercent: 2,
+    unitmeasured: "piece",
+    qtyonhand: 10,
+    recorderlvl: 3,
+    sellprice: 3150,
+    costprice: 3050,
+  },
+  {
+    productno: "P07885",
+    description: "CD Drive",
+    prfitpercent: 2.5,
+    unitmeasured: "piece",
+    qtyonhand: 10,
+    recorderlvl: 3,
+    sellprice: 5250,
+    costprice: 5100,
+  },
+
+  {
+    productno: "P07965",
+    description: "540 HDD",
+    prfitpercent: 4,
+    unitmeasured: "piece",
+    qtyonhand: 10,
+    recorderlvl: 3,
+    sellprice: 8400,
+    costprice: 8000,
+  },
+  {
+    productno: "P07975",
+    description: "1.44 Drive",
+    prfitpercent: 5,
+    unitmeasured: "piece",
+    qtyonhand: 10,
+    recorderlvl: 3,
+    sellprice: 1050,
+    costprice: 1000,
+  },
+  {
+    productno: "P08865",
+    description: "1.22 Drive",
+    prfitpercent: 5,
+    unitmeasured: "piece",
+    qtyonhand: 2,
+    recorderlvl: 3,
+    sellprice: 1050,
+    costprice: 1000,
+  },
+]);
+
+
+// db.client_master.find({}).skip(3)
+// db.client_master.find({}).sort({"Name":1})
+// db.client_master.find({}).sort({"Name":-1})
+// db.client_master.find({}).count()
+// db.client_master.find({"Name":"Ravi"})
+
+// db.client_master.find({"baldue":{$eq:0}}).pretty() 
+// db.client_master.find({"baldue":{$ne:0}}).pretty()
+// db.client_master.find({"baldue":{$gt:2000}}).pretty() 
+// db.client_master.find({"baldue":{$gte:2000}}).pretty()
+// db.client_master.find({"baldue":{$lt:2000}}).pretty()
+// db.client_master.find({"baldue":{$lte:2000}}).pretty()
+
+// db.client_master.find({"baldue":{$in:[15000,0]}}).pretty()
+// db.client_master.find({"baldue":{$nin:[15000,0]}}).pretty()
+
+
+// db.client_master.find({$and:[{"baldue":{$ne:0}},{"State":{$in:["Maharashtra"]}}]}).pretty()
+
+
+// db.client_master.find({$and:[{"city":{$eq:"Delhi"}},{"state":{$eq:"Tamilnadu"}}]})
+
+// load('create.js')
+// true
+
+//  show collections
+// client_master
+// product_master
+// salesman_master
+
+// db.product_master.drop() 
+
+// db.client_master.remove({})
+// db.product_master.remove({qtyonhand:{$eq:10}})
+
+// db.product_master.update({productno:'P00001'},{$set:{txt:"18"}})
+// db.product_master.updateMany({},{$set:{txt1:"18"}})
+1.
+    db.client_master.find().pretty()
+  
+2.
+
+  db.client_master.find().pretty()
+
+3.
+  db.client_master.find({},{ Name:1 , City:1,State:1 })
+
+4.
+db.product_master.find({},{description:1})
+
+5.
+db.client_master.find({"City":"Bombay"})
+
+6.  
+db.client_master.find({"baldue":{$eq:5000}}).pretty()
+
+7.
+db.client_master.update({Clientno:"C00005"},{$set:{City:"Banglore"}})
+
+8.
+db.client_master.update({Clientno:"C00001"},{$set:{City:"Banglore"}})
+
+9.
+db.client_master.updateMany({},{$set:{City:"Pune"}})
+
+10.
+db.client_master.find({$or:[{"City":{$eq:"Banglore"}},{"City":{$eq:"Manglore"}}]}).pretty()
+
+11.
+db.client_master.find({"baldue":{$gt:10000}}).pretty()
+
+12.
+db.client_master.find({$and:[{"Clientno":{$eq:"C00001"}},{"Clientno":{$eq:"C00002"}}]})
+
+13.
+db.product_master.find({$and:[{"sellprice":{$gt:500}},{"sellprice":{$lte:750}}]}).pretty()
+
+14.
+db.client_master.find({"State":{$nin:["Maharashtra"]}},{Name:1,City:1,State:1}).pretty()
+
+15.
+db.product_master.find({"sellprice":{$lte:500}}).count()
