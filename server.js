@@ -1,28 +1,20 @@
-const fs = require("fs");
-// let content = "Hello";
+// const express = require("express");
+// const app = express();
+// const PORT = 3003;
 
-// fs.writeFile("file1.txt", content, "utf8", (err) => {
-//   if (err) console.log(err);
-//   else console.log("File writed...");
+// app.get("/", (req, res) => {
+//   res.json({ msg: "Hello" });
+//   console.log("Connected");
 // });
 
-// fs.readFile("file1.txt", "utf-8", (err, data) => {
-//   if (err) console.log(err);
-//   else console.log(data);
+// app.get("/login", (req, res) => {
+//   res.json({ msg: "Login" });
 // });
 
-// data = fs.readFileSync("file1.txt", "utf-8");
-// {
-//   console.log(data);
-// }
-
-// fs.writeFileSync("file1.txt", content, "utf-8");
-
-// fs.rename("file1.txt", "file2.txt", (err) => {
-//   if (err) console.log(err);
+// app.post("/login", (req, res) => {
+//   res.json({ msg: "Login Post" });
+// });
+// app.listen(PORT, () => {
+//   console.log(`server listening port ${PORT}`);
 // });
 
-fs.copyFile("file2.txt", "file1.txt", (err) => {
-  if (err) console.log(err);
-  else console.log("file copy Done...");
-});
